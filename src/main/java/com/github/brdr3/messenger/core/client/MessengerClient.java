@@ -133,22 +133,25 @@ public class MessengerClient {
         for (int i = 1; i <= orderTestMessages; i++) {
             try {
                 sendMessage(mb.content("Message " + i + ", id = " + (maxId - i))
-                        .to(server).from(user).id(maxId + orderTestMessages-i+1).build());
-                
+                        .to(server)
+                        .from(user)
+                        .id(maxId + orderTestMessages - i + 1)
+                        .build());
+
                 ++lastId;
-                
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
         }
-        
+
         try {
             sendMessage(mb.content("End test")
                     .to(server).from(user).id(++lastId).build());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        
+
     }
 
     private void testDuplicated() {
@@ -167,7 +170,8 @@ public class MessengerClient {
         Long id = getMaxId();
 
         try {
-            sendMessage(new MessageBuilder().content("This message has id greater than it was supposed to be.")
+            sendMessage(new MessageBuilder()
+                    .content("This message has id greater than it was supposed to be.")
                     .id(id + lostTestMessages)
                     .from(user)
                     .to(server)
