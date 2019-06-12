@@ -11,8 +11,6 @@ import java.net.InetAddress;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MessengerClient {
 
