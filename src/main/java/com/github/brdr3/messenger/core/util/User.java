@@ -1,6 +1,8 @@
 package com.github.brdr3.messenger.core.util;
 
 import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Objects;
 
 public class User {
     private String username;
@@ -13,8 +15,8 @@ public class User {
         this.port = sendPort;
     }
     
-    public User(String username) {
-        this(username, null, null);
+    public User(String username) throws UnknownHostException {
+        this(username, InetAddress.getByName("localhost"), 10);
     }
 
     public int getPort() {
@@ -44,5 +46,30 @@ public class User {
     @Override
     public String toString() {
         return username + "@" + address.getHostName() + ":" + port;
+    }
+    
+    @Override
+    public User clone() throws CloneNotSupportedException {
+        return this;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof User) {
+            User oo = (User) o;
+            
+            return oo.getUsername().equals(this.getUsername());
+        }
+        
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 71 * hash + Objects.hashCode(this.username);
+        hash = 71 * hash + Objects.hashCode(this.address);
+        hash = 71 * hash + Objects.hashCode(this.port);
+        return hash;
     }
 }
