@@ -7,7 +7,7 @@
 ---
 
 ## 1. Introdução
-Este relatório pretende elucidar o sistema desenvolvido como solução para o problema **Exercício Programático ZERO**. Para efeito de entendimento mais claro sobre o sistema, foi utilizado a biblioteca Gson para tratamento de objetos que foram enviados pela rede. Além disso, foi utilizado o maven para gerenciamento de dependências.
+Este relatório pretende elucidar o sistema desenvolvido como solução para o problema **Exercício Programático ZERO**. Para efeito de entendimento mais claro sobre o sistema, foi utilizado a biblioteca Gson (disponível em [https://github.com/google/gson](https://github.com/google/gson)) para tratamento de objetos que foram enviados pela rede. Além disso, foi utilizado o maven para gerenciamento de dependências.
 
 ---
 ## 2. Requisitos
