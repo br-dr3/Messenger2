@@ -33,7 +33,7 @@ A seguir, uma tabela dos atributos da classe mensagem, seguidas de uma breve exp
 |  Atributo  | Tipo   |  Explicação |
 |:----------:|--------|:------------|
 | id         | **Long**\*  | Guarda o id da mensagem. (único em relação a conversa) |
-| content    | String | O conteúdo referente a mensagem (não há distinção entre mensagem de cliente e servidor no conteúdo)|
+| content    | String | O conteúdo referente a mensagem |
 | to         | **User**\* |  Usuário que receberá a mensagem (para este contexto, será sempre o servidor) |
 | from       | **User**\* |  Usuário que enviou a mensagem |
 
