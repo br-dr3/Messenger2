@@ -42,16 +42,16 @@ A seguir, uma tabela dos atributos da classe mensagem, seguidas de uma breve exp
 
 ---
 ## 4. Tratamento de mensagens fora de ordem
-Quando as mensagens chegam fora de ordem, o cliente espera as mensagens que estão faltantes (até que a ordem se confirme) para as mostrar (para testar, basta usar o comando &rarr; **/testOrder**). Todas as mensagens recebidas são guardadas, até que se restabeleça a ordem.
+Quando as mensagens chegam fora de ordem, o servidor espera as mensagens que estão faltantes (até que haja todas as mensagens entre um id e outro) para as mostrar (para testar, basta usar o comando &rarr; **/testOrder**). Todas as mensagens recebidas são guardadas, até que se restabeleça a ordem.
 
 ---
 ## 5. Tratamento de mensagens duplicadas
-Caso uma mensagem chegue duplicada, ela é recebida e validada (foi entendido como duplicata uma mensagem que tem somente o mesmo id que alguma outra). Caso seja uma duplicata, ela é descartada e é exibido em tela uma mensagem condizente. É possível testar usando o comando &rarr; **/testDuplicated**
+Caso uma mensagem chegue duplicada, ela é recebida e validada (foi entendido como duplicata uma mensagem que tem somente o mesmo id que alguma outra, independente do conteúdo). Caso seja uma duplicata, ela é descartada e é exibido em tela uma mensagem condizente. É possível testar usando o comando &rarr; **/testDuplicated**
 
 ---
 ## 6. Consumo do Buffer e Tratamento de mensagens perdidas
 O servidor consome o buffer continuamente (todas mensagens que estão válidas para exibir são colocadas em fila). Mensagens perdidas são consideradas fora de ordem. A ideia é que o servidor implemente uma política de _timeout_ e peça a mensagem novamente ao cliente.
 
-Como não era escopo deste projeto esse tipo de tratamento (uma vez que o requisito não incluia mensagens repetidas), foi considerada somente uma mensagem fora de ordem (para testar, basta usar o comando &rarr; **/testLost**).
+Como não era escopo deste projeto esse tipo de tratamento (uma vez que o requisito não incluia mensagens enviadas do servidor ao cliente), foi considerada somente uma mensagem fora de ordem (para testar, basta usar o comando &rarr; **/testLost**).
 
 ---
